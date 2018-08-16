@@ -1,6 +1,7 @@
 import db.DBHelper;
 import db.DBManager;
 import models.Administrator;
+import models.Department;
 import models.Employee;
 import models.Manager;
 
@@ -10,11 +11,18 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        Manager emilManager = new Manager("Emil", "JH785673F", 10000, 100000, "HR");
+
+        Manager emilManager = new Manager("Emil", "JH785673F", 10000, 100000);
         DBHelper.save(emilManager);
 
-        Manager kirstinBoss = new Manager("Kirstin", "FGk9876F", 100000000, 500000, "Boss");
+        Manager kirstinBoss = new Manager("Kirstin", "FGk9876F", 100000000, 500000);
         DBHelper.save(kirstinBoss);
+
+        Department hr = new Department("HR", emilManager);
+        DBHelper.save(hr);
+
+        Department bossDept = new Department("Boss Department", kirstinBoss);
+        DBHelper.save(bossDept);
 
         Administrator joe = new Administrator("Joe", "PS303576D", 20000, emilManager);
         DBHelper.save(joe);

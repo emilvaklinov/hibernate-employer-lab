@@ -9,10 +9,10 @@ import java.util.List;
 public class Manager extends Employee {
 
     private int budget;
-    private String department;
+    private Department department;
     private List<Administrator> administrators;
 
-    public Manager(String name, String niNumber, int salary, int budget, String department) {
+    public Manager(String name, String niNumber, int salary, int budget) {
         super(name, niNumber, salary);
         this.budget = budget;
         this.department = department;
@@ -32,12 +32,12 @@ public class Manager extends Employee {
         this.budget = budget;
     }
 
-    @Column(name = "department")
-    public String getDepartment() {
+    @OneToOne(mappedBy = "manager", fetch = FetchType.LAZY)
+    public Department getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(Department department) {
         this.department = department;
     }
 
