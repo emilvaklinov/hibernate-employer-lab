@@ -10,9 +10,6 @@ public class Department {
 //    Change the Manager class so that the manager takes in a Department object rather than a string (remember to update the getters and setters).
 //    Remove the department from the Manager constructor. The department should have a manager in its constructor but the manager should not have a department in its.
 //    Create a OneToOne association between Manager and Department.
-//
-//    In DBManager write a function fo find what department the manager is accociated with.
-
 
 
     private int id;

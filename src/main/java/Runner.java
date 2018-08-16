@@ -41,6 +41,8 @@ public class Runner {
         Administrator findJoe = DBHelper.findbyId(Administrator.class, joe.getId());
 
         List<Employee> employees = DBManager.getManagersEmployees(kirstinBoss);
+
+        Department emilsDepartment = DBManager.getManagersDepartment(emilManager);
     }
 
 }

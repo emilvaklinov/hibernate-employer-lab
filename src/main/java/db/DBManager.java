@@ -1,5 +1,6 @@
 package db;
 
+import models.Department;
 import models.Employee;
 import models.Manager;
 import org.hibernate.Criteria;
@@ -29,6 +30,22 @@ public class DBManager {
             session.close();
         }
         return results;
+    }
+
+    //    In DBManager write a function fo find what department the manager is accociated with.
+    public static Department getManagersDepartment(Manager manager){
+        session = HibernateUtil.getSessionFactory().openSession();
+        Department result = null;
+        try {
+            Criteria cr = session.createCriteria(Department.class);
+            cr.add(Restrictions.eq("manager", manager));
+            result = (Department) cr.uniqueResult();
+        } catch (HibernateException ex) {
+            ex.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return result;
     }
 
 }
