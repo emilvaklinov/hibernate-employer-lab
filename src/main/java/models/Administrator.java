@@ -7,6 +7,9 @@ import javax.persistence.*;
 public class Administrator extends Employee {
 
 //    Create a Administrator class which inherits from the employee class. The administrator should also have a manager.
+//    Create a ManyToOne relationship between the administrator and the manager.
+
+
 
     private Manager manager;
 

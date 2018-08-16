@@ -1,5 +1,7 @@
 import db.DBHelper;
+import db.DBManager;
 import models.Administrator;
+import models.Employee;
 import models.Manager;
 
 import java.util.List;
@@ -30,6 +32,7 @@ public class Runner {
 
         Administrator findJoe = DBHelper.findbyId(Administrator.class, joe.getId());
 
+        List<Employee> employees = DBManager.getManagersEmployees(kirstinBoss);
     }
 
 }

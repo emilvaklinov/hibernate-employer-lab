@@ -8,6 +8,8 @@ import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
 
+//In a DBHelper class create all of the CRUD functions.
+
 public class DBHelper {
 
     private static Session session;
