@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "employees")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Employee {
 
 //    Create an abstract Employee class. The employee should have a name, a NI number and a salary.
